@@ -6,7 +6,7 @@
  * Time: 10:53
  */
 
-class Fastphp
+class Loader
 {
     protected $_config = [];
 
@@ -27,9 +27,9 @@ class Fastphp
 
     //自动加载控制器和模型类
     public static function loadClass($class){
-        $framework = __DIR__ . '/' . $class . '.php';
-        $controllers = APP_PATH . 'application/controllers/' . $class . '.php';
-        $models = APP_PATH . 'application/models/' . $class . '.php';
+        $framework      = __DIR__ . '/' . $class . '.php';
+        $controllers    = APP_PATH . 'app/controllers/' . $class . '.php';
+        $models         = APP_PATH . 'app/models/' . $class . '.php';
 
         if(file_exists($framework)){
             //加载框架核心类
